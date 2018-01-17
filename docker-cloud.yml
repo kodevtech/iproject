@@ -1,0 +1,12 @@
+iproject-api:
+  image: bheng/iproject-api:latest
+  autorestart: always
+  autoredeploy: true
+  ports:
+    - "3002:3002"
+iproject-web:
+  image: bheng/iproject-web:latest
+  autorestart: always
+  autoredeploy: true
+  ports:
+    - "8080:8080"

@@ -1,0 +1,18 @@
+version: "2"
+services:
+  iproject-api:
+    build:
+      context: ./api
+      dockerfile: api.dockerfile
+    image: 'iproject-api'
+    ports:
+      - '3002:3002'
+  iproject-web:
+    build:
+      context: ./web
+      dockerfile: web.dockerfile
+    image: 'iproject-web:latest'
+    ports:
+      - '8080:8080'
+    links:
+      - iproject-api
